@@ -1,66 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Future Exit Price Generator</title>
 
-	  <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="manifest" href="other/manifest.json">
 
-
-  </head>
-  <body>
-    <div class="container-fluid center_div">
-	<div class="row">
-		<div class="col-md-12 p-3">
-					<h2>
-						<span style="font-size: 14">Enter trade info</span>
-					</h2>
-		</div>
-			<div class="col-md-12">
-			<div class="row">
-				<div class="col-md-8">
-					<form role="form" onsubmit="return false;">
-						<div class="form-group">
-							<label for="entry_price">
-								Entry Price
-							</label>
-							<input type="text" class="form-control" id="entry_price">
-						</div>
-						<div class="form-group">
-							<label for="leverage">
-								Leverage
-							</label>
-							<input type="text" class="form-control" id="leverage">
-						</div>
-						<div class="form-group">
-							<label for="desired_roe">
-								Desired ROE (%)
-							</label>
-							<input type="text" class="form-control" id="desired_roe">
-						</div>
-						<button type="submit" class="btn btn-primary mb-3" onclick="calc()">
-							Submit
-						</button>
-						<div class="form-group">
-							<label class="mt-4">
-								💎 Exit At
-							</label>
-						</div>
-					</form>
-					<div style="background-color: #121212" class="displayer jumbotron-fluid flex-row">
-						<h2 style="color: rgb(240, 185, 11) !important;" id="exit_at" class="p-2"></h2>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+</head>
+<body>
+<div class="container-fluid center_div">
+    <div class="row">
+        <div class="col-md-12 p-3">
+            <h2>
+                <span style="font-size: 14">Enter trade info</span>
+            </h2>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-8">
+                    <form role="form" onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="entry_price">
+                                Entry Price
+                            </label>
+                            <input type="text" class="form-control" id="entry_price">
+                        </div>
+                        <div class="form-group">
+                            <label for="leverage">
+                                Leverage
+                            </label>
+                            <input type="text" class="form-control" id="leverage">
+                        </div>
+                        <div class="form-group">
+                            <label for="desired_roe">
+                                Desired ROE (%)
+                            </label>
+                            <input type="text" class="form-control" id="desired_roe">
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-3" onclick="calc()">
+                            Submit
+                        </button>
+                        <div class="form-group">
+                            <label class="mt-4">
+                                💎 Exit At
+                            </label>
+                        </div>
+                    </form>
+                    <div style="background-color: #121212" class="displayer jumbotron-fluid flex-row">
+                        <h2 style="color: rgb(240, 185, 11) !important;" id="exit_at" class="p-2"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-	<script src="js/scripts.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+<script src="js/scripts.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
 </html>

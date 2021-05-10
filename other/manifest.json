@@ -1,0 +1,11 @@
+{
+  "short_name": "Future Calc",
+  "name": "Future Exit Price Calculator",
+  "icons": [
+    {
+      "src": "other/icon1.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpg"
+    }
+  ]
+}
