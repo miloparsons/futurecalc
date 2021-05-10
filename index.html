@@ -25,7 +25,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-8">
-					<form role="form">
+					<form role="form" onsubmit="return false;">
 						<div class="form-group">
 							<label for="entry_price">
 								Entry Price
@@ -44,14 +44,14 @@
 							</label>
 							<input type="text" class="form-control" id="desired_roe">
 						</div>
-						<button type="submit" class="btn btn-primary mb-3">
+						<button type="submit" class="btn btn-primary mb-3" onclick="calc()">
 							Submit
 						</button>
 						<div class="form-group">
 							<label class="mt-4">
 								Exit At
 							</label>
-							<h2 id="exit_at">ABC</h2>
+							<h2 id="exit_at"></h2>
 						</div>
 					</form>
 				</div>
@@ -59,9 +59,8 @@
 		</div>
 	</div>
 </div>
-
+	<script src="js/scripts.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
   </body>
 </html>
