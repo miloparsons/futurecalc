@@ -3,9 +3,9 @@
   "name": "Future Exit Price Calculator",
   "icons": [
     {
-      "src": "other/icon1.jpg",
+      "src": "other/icon_192.png",
       "sizes": "192x192",
-      "type": "image/jpg"
+      "type": "image/png"
     }
     ],
   "display": "standalone",
