@@ -7,5 +7,7 @@
       "sizes": "192x192",
       "type": "image/jpg"
     }
-  ]
+    ],
+  "display": "standalone",
+  "orientation": "portrait"
 }
