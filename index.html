@@ -31,11 +31,16 @@
                             </label>
                             <input type="text" class="form-control" id="entry_price">
                         </div>
-                        <div class="form-group">
+                        <div>
                             <label for="leverage">
                                 Leverage
                             </label>
-                            <input type="text" class="form-control" id="leverage">
+                        </div>
+                        <div class="d-flex my-3">
+                            <div class="w-75">
+                                <input type="range" class="custom-range" id="leverage" value="10" min="1" max="75">
+                            </div>
+                            <span class="font-weight-bold text-primary ml-2 valueSpan2"></span>
                         </div>
                         <div class="form-group">
                             <label for="desired_roe">
@@ -43,25 +48,62 @@
                             </label>
                             <input type="text" class="form-control" id="desired_roe">
                         </div>
-                        <button type="submit" class="btn btn-primary mb-3" onclick="calc()">
+                        <div class="form-group">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">25%</button>
+                                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">50%</button>
+                                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">75%</button>
+                                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">100%</button>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                        <button type="submit" class="btn btn-primary" onclick="calc()">
                             Submit
                         </button>
-                        <div class="form-group">
-                            <label class="mt-4">
-                                💎 Exit At
-                            </label>
                         </div>
                     </form>
-                    <div style="background-color: #121212" class="displayer jumbotron-fluid flex-row">
-                        <h2 style="color: rgb(240, 185, 11) !important;" id="exit_at" class="p-2"></h2>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="container-fluid center_div">
+    <div class="form-group">
+        <label class="mt-4">
+            💎&nbsp;&nbsp;Exit At
+        </label>
+    </div>
+    <div class="displayer flex-row">
+        <h2 style="color: rgb(240, 185, 11) !important;" id="exit_at" class="p-2"></h2>
+    </div>
+</div>
 <script src="js/scripts.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        const $valueSpan = $('.valueSpan2');
+        const $value = $('#leverage');
+        $valueSpan.html($value.val());
+        $value.on('input change', () => {
+
+            $valueSpan.html($value.val());
+        });
+    });
+</script>
+<script>
+    function buttonval(clicked_id)
+    {
+        var test1 = clicked_id;
+        var result = parseFloat(test1);
+
+        console.log(test1);
+        console.log(result);
+
+        document.getElementById('desired_roe').value = result;
+
+    }
+</script>
 </body>
 </html>

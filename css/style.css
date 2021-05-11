@@ -1,6 +1,9 @@
 .center_div{
-    margin: 10px auto;
-    width:80% /* value of your choice which suits your alignment */
+    margin: 20px 0px 0px 40px;
+    width:90%; /* value of your choice which suits your alignment */
+    background-color: #1d1e1f;
+    border-radius: 10px;
+    padding-bottom: 20px;
 }
 body {
     background-color: rgb(38 39 45) !important;
@@ -10,5 +13,6 @@ exit_price {
     color: rgb(240, 185, 11) !important;
 }
 displayer {
+    background-color: #121212 !important;
     border-radius: 10px !important;
 }
