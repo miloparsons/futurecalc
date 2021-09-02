@@ -4,7 +4,7 @@
     var roe = document.getElementById('desired_roe').value;
     var val_1 = (roe/100) / leverage;
     var val_2 = val_1 + 1;
-    var val_3 = "$" + Number(Math.round((val_2 * entry) +'e5')+'e-5');
+    var val_3 = (val_2 * entry).toFixed(2);
     document.getElementById('calc_value').innerHTML = 'val_3';
 
     document.getElementById('calc_type').innerHTML = '💎&nbsp;&nbsp;Exit At';
@@ -18,7 +18,7 @@
      let leverage = document.getElementById('leverage').value;
      let pos_size = ((leverage * margin) / entry);
      let margin_ratio = 0.005;
-     const liq_price = "~ $" + Number(Math.round(margin - pos_size * entry)/(pos_size * margin_ratio - pos_size));
+     let liq_price = ((margin - pos_size * entry)/(pos_size * margin_ratio - pos_size)).toFixed(2);
      document.getElementById('calc_type').innerHTML = '📉&nbsp;&nbsp;Liquidation Price';
      document.getElementById('calc_value').innerHTML = liq_price;
 
