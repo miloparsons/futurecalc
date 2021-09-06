@@ -14,6 +14,19 @@
     <script src="js/scripts.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#calc_type").change(function () {
+                if ($(this).val() == "2") {
+                    $("#roe_container").show();
+                } else {
+                    $("#roe_container").hide();
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 <div class="container-fluid center_div">
@@ -23,69 +36,137 @@
                 <span style="font-size: 14">Enter trade info</span>
             </h2>
         </div>
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-md-8">
-                    <form role="form" onsubmit="return false;">
-                        <div class="form-group">
-                            <label for="initial_margin">
-                                Initial Margin
-                            </label>
-                            <input type="text" class="form-control" id="initial_margin">
-                        </div>
-                        <div class="form-group">
-                            <label for="entry_price">
-                                Entry Price
-                            </label>
-                            <input type="text" class="form-control" id="entry_price">
-                        </div>
-                        <div>
-                            <label for="leverage">
-                                Leverage
-                            </label>
-                        </div>
-                        <div class="d-flex my-3">
-                            <div class="w-50">
-                                <input type="range" class="custom-range" id="leverage" value="10" min="1" max="75">
-                            </div>
-                            <span class="font-weight-bold valueSpan2"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="desired_roe">
-                                Desired ROE (%)
-                            </label>
-                            <input type="text" class="form-control" id="desired_roe">
-                        </div>
-                        <div class="form-group">
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">25%</button>
-                                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">50%</button>
-                                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">75%</button>
-                                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">100%</button>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                        <button type="submit" class="btn btn-primary" onclick="liq_calc()">
-                            Calculate Liq. Price
-                        </button>
-                            <button type="submit" class="btn btn-primary" onclick="calc()">
-                                Calculate PNL
-                            </button>
-                        </div>
-                    </form>
-                </div>
+    </div>
+    <form role="form" onsubmit="return false;">
+    <div class="row">
+        <div class="form-group col-sm">
+            <label for="initial_margin">
+                Initial Margin
+            </label>
+            <input type="text" class="form-control" id="initial_margin">
+        </div>
+        <div class="form-group col-sm">
+            <label for="entry_price">
+                Entry Price
+            </label>
+            <input type="text" class="form-control" id="entry_price">
+        </div>
+        <div class="form-group col-sm">
+            <label for="leverage">
+                Leverage
+            </label>
+            <input type="text" class="form-control" id="leverage">
+        </div>
+    </div>
             </div>
         </div>
     </div>
 </div>
+    <div class="container-fluid center_div">
+    <div class="row">
+        <select class="form-select" aria-label="Select" id="calc_type">
+            <option selected value="1">Liquidation</option>
+            <option value="2">ROE</option>
+        </select>
+    </div>
+    </div>
+<div class="container-fluid center_div" id="roe_container" style="display: none">
+    <div class="row">
+        <div class="col-md-12 p-3">
+            <h2>
+                <span style="font-size: 12">ROE Calc</span>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm">
+            <label for="desired_roe">
+                Desired ROE (%)
+            </label>
+            <input type="text" class="form-control" id="desired_roe">
+        </div>
+        <div class="form-group col-sm" style="vertical-align: middle">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">25%</button>
+                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">50%</button>
+                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">75%</button>
+                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">100%</button>
+            </div>
+        </div>
+        <div class="col-sm">
+            <button type="submit" class="btn btn-primary" onclick="calc()">
+                Calculate PNL
+            </button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid center_div" id="liq_container" style="display: none">
+    <div class="row">
+        <div class="col-md-12 p-3">
+            <h2>
+                <span style="font-size: 12">ROE Calc</span>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm">
+            <label for="desired_roe">
+                Desired ROE (%)
+            </label>
+            <input type="text" class="form-control" id="desired_roe">
+        </div>
+        <div class="form-group col-sm" style="vertical-align: middle">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">25%</button>
+                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">50%</button>
+                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">75%</button>
+                <button type="button" class="btn btn-outline-warning" onclick="buttonval(this.innerHTML)">100%</button>
+            </div>
+        </div>
+        <div class="col-sm">
+            <button type="submit" class="btn btn-primary" onclick="calc()">
+                Calculate PNL
+            </button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid center_div">
+    <div class="row">
+        <div class="col-md-12 p-3">
+            <h2>
+                <span style="font-size: 12">Liquidation</span>
+            </h2>
+        </div>
+    </div>
+    <div class="form-group col-sm">
+        <label for="liq_input">
+            Liquidation Price
+        </label>
+        <input type="text" class="form-control" id="liq_input">
+    </div>
+    <div class="row">
+        <div class="col-sm mb-2">
+            <button type="submit" class="btn btn-primary" onclick="liq_calc()">
+                Liq. Price
+            </button>
+        </div>
+<!--        <div class="col-sm">
+            <button type="submit" class="btn btn-primary" onclick="lev_calc()">
+                Leverage
+            </button>
+        </div>-->
+    </div>
+    </form>
+</div>
 <div class="container-fluid center_div">
     <div class="form-group">
-        <label class="mt-4" id="calc_type">
+        <label class="mt-4" id="calc_header">
         </label>
     </div>
     <div class="displayer flex-row">
         <h2 style="color: rgb(240, 185, 11) !important;" id="calc_value" class="p-2"></h2>
     </div>
+
 </div>
 <!--<div class="container">
     <h2>Dynamic Tabs</h2>
@@ -142,6 +223,15 @@
         document.getElementById('desired_roe').value = result;
 
     }
+</script>
+<script>
+    $('.btn-plus, .btn-minus').on('click', function(e) {
+        const isNegative = $(e.target).closest('.btn-minus').is('.btn-minus');
+        const input = $(e.target).closest('.input-group').find('input');
+        if (input.is('input')) {
+            input[0][isNegative ? 'stepDown' : 'stepUp']()
+        }
+    })
 </script>
 </body>
 </html>
