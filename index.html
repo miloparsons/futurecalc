@@ -62,13 +62,11 @@
         </div>
     </div>
 </div>
-    <div class="container-fluid center_div">
-    <div class="row">
-        <select class="form-select" aria-label="Select" id="calc_type">
+    <div class="container-fluid center_div d-flex align-items-center" style="height: 50px">
+        <select class="form-select align-self-center" aria-label="Select" id="calc_type">
             <option selected value="1">Liquidation</option>
             <option value="2">ROE</option>
         </select>
-    </div>
     </div>
 <div class="container-fluid center_div" id="roe_container" style="display: none">
     <div class="row">
@@ -144,17 +142,11 @@
         </label>
         <input type="text" class="form-control" id="liq_input">
     </div>
-    <div class="row">
-        <div class="col-sm mb-2">
-            <button type="submit" class="btn btn-primary" onclick="liq_calc()">
-                Liq. Price
-            </button>
+    <div class="row d-flex align-items-start m-3 pb-3">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary" onclick="liq_calc()">Liq. Price</button>
+            <button type="button" class="btn btn-secondary" onclick="lev_calc()">Leverage</button>
         </div>
-<!--        <div class="col-sm">
-            <button type="submit" class="btn btn-primary" onclick="lev_calc()">
-                Leverage
-            </button>
-        </div>-->
     </div>
     </form>
 </div>
